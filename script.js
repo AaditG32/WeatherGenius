@@ -17,8 +17,17 @@ let weather = {
         document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + "@2x.png"
         document.querySelector(".description").innerText  =description;
         document.querySelector(".temp").innerText = ((temp - 273).toFixed(0)) + "°";
-        document.querySelector(".humidity").innerText ="Humidty: " + humidity + "%";
         document.querySelector(".wind").innerText = "Wind Speed: " + speed + " km/h";
+        document.querySelector(".imperial").addEventListener("click", function() {
+            document.querySelector(".temp").innerText = (((temp - 273) * 1.8 + 32).toFixed(0)) + "°";
+            document.querySelector(".wind").innerText = "Wind Speed: " + ((speed / 1.609).toFixed(2)) + " mph";
+        });
+        document.querySelector(".metric").addEventListener("click", function() {
+            document.querySelector(".temp").innerText = ((temp - 273).toFixed(0)) + "°";
+            document.querySelector(".wind").innerText = "Wind Speed: " + speed + " km/h";
+        });
+        document.querySelector(".humidity").innerText ="Humidty: " + humidity + "%";
+        
         document.querySelector(".weather").classList.remove("loading")
         document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + name + "')"
     },
@@ -36,5 +45,7 @@ document.querySelector(".search-bar").addEventListener("keyup", function (event)
         weather.search();
     }
 });
+
+
 
 weather.fetchWeather("Washington DC");
