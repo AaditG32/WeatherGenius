@@ -85,3 +85,47 @@ h1.temp {
     top: 0;
     left: 20px;
 }
+
+.option {
+    border: none;
+    outline: none;
+    padding: 0.4em 1em;
+    border-radius: 22px;
+    background: #7c7c7c2b;
+    color: white;
+    font-family: inherit;
+    font-size: 105%;
+    width: calc(100%-20px);
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    margin-top: 20px;
+}
+
+.metric {
+    border: none;
+    outline: none;
+    background: black;
+    color: white;
+    padding: 0.4em 1em;
+    border-radius: 12px;
+    font-size: 90%
+}
+
+.metric:hover {
+    background: #7c7c7c6b;
+}
+
+.imperial {
+    border: none;
+    outline: none;
+    background: black;
+    color: white;
+    padding: 0.4em 1em;
+    border-radius: 12px;
+    font-size: 90%
+}
+
+.imperial:hover {
+    background: #7c7c7c6b;
+}
